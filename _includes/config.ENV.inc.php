@@ -1,6 +1,6 @@
 <?php
 /**
- * /_includes/software.inc.php
+ * /_includes/config.SAMPLE.inc.php
  *
  * This file is part of DomainMOD, an open source domain and internet asset manager.
  * Copyright (c) 2010-2024 Greg Chetcuti <greg@chetcuti.com>
@@ -20,12 +20,13 @@
  */
 ?>
 <?php
-const SOFTWARE_TITLE = 'DomainMOD';
-const SOFTWARE_VERSION = '4.21.0';
-define('WEB_ROOT', $web_root);
-define('DB_HOSTNAME', $dbhostname);
-define('DB_NAME', $dbname);
-define('DB_USERNAME', $dbusername);
-define('DB_PASSWORD', $dbpassword);
-define('DB_SSL_CAPATH', $dbsslcapath);
-define('DB_SSL_VERIFY_CERT', $dbsslverifycert);
+// Path Settings
+$web_root = getenv('DOMAINMOD_WEB_ROOT') ?: '';
+
+// Database Settings
+$dbhostname = getenv('DOMAINMOD_DB_HOSTNAME');
+$dbname = getenv('DOMAINMOD_DB_NAME');
+$dbusername = getenv('DOMAINMOD_DB_USERNAME');
+$dbpassword = getenv('DOMAINMOD_DB_PASSWORD');
+$dbsslcapath = getenv('DOMAINMOD_DB_SSL_CAPATH');
+$dbsslverifycert = getenv('DOMAINMOD_DB_SSL_VERIFY_CERT');
