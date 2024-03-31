@@ -28,5 +28,6 @@ $dbhostname = getenv('DOMAINMOD_DB_HOSTNAME');
 $dbname = getenv('DOMAINMOD_DB_NAME');
 $dbusername = getenv('DOMAINMOD_DB_USERNAME');
 $dbpassword = getenv('DOMAINMOD_DB_PASSWORD');
+$dbsslca = getenv('DOMAINMOD_DB_SSL_CA');
 $dbsslcapath = getenv('DOMAINMOD_DB_SSL_CAPATH');
 $dbsslverifycert = getenv('DOMAINMOD_DB_SSL_VERIFY_CERT');

@@ -35,8 +35,11 @@ class Database
             \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET sql_mode="NO_ENGINE_SUBSTITUTION"',
             \PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => DB_SSL_VERIFY_CERT
         );
+        if (DB_SSL_CA !== false) {
+            $options[\PDO::MYSQL_ATTR_SSL_CA] = DB_SSL_CA;
+        }
         if (DB_SSL_CAPATH !== false) {
-            $opts[\PDO::MYSQL_ATTR_SSL_CAPATH] = DB_SSL_CAPATH;
+            $options[\PDO::MYSQL_ATTR_SSL_CAPATH] = DB_SSL_CAPATH;
         }
         $dsn = "mysql:host=" . DB_HOSTNAME . ";dbname=" . DB_NAME . ";charset=utf8";
         $this->cnxx = new \PDO($dsn, DB_USERNAME, DB_PASSWORD, $options);
